@@ -11,7 +11,7 @@
       <stop offset="100%" stop-color="#0B0F19" stop-opacity="0.6"/>
     </linearGradient>
 
-    <!-- Animated ASCII Cyan-Purple Gradient (Left Panel Art Only) -->
+    <!-- Animated ASCII Cyan-Purple Gradient -->
     <linearGradient id="asciiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#22D3EE">
         <animate attributeName="stop-color" values="#22D3EE; #3B82F6; #A855F7; #22D3EE" dur="8s" repeatCount="indefinite"/>
@@ -65,12 +65,8 @@
 
   <style>
     .text-mono { font-family: "Courier New", Courier, monospace, "Consolas"; }
-    /* Primary brand blue - slightly darker shade than basic cyan/blue used previously */
     .text-blue-dark { fill: #3B82F6; font-weight: bold; }
-    /* Consistent yellow used for all profile keys/titles */
     .text-yellow-profile { fill: #FBBF24; }
-    
-    /* Original system text colors */
     .text-cyan { fill: #22D3EE; }
     .text-purple { fill: #A855F7; }
     .text-green { fill: #10B981; }
@@ -79,7 +75,6 @@
     .text-red { fill: #EF4444; font-weight: bold; }
     .ascii-funny { font-family: "Courier New", Courier, monospace; font-weight: bold; font-size: 11.5px; fill: url(#asciiGrad); letter-spacing: 1.2px; white-space: pre; }
     
-    /* Cursor & REC Blink Animation */
     .cursor { animation: blink 0.8s infinite; }
     .rec-blink { animation: recPulse 1.2s infinite; }
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
@@ -108,7 +103,7 @@
     <circle cx="700" cy="550" r="2" fill="#22D3EE"><animate attributeName="cy" values="550;530;550" dur="7s" repeatCount="indefinite"/></circle>
   </g>
 
-  <!-- MAIN CONTENT GROUP (Sequentially Revealed) -->
+  <!-- MAIN CONTENT GROUP -->
   <g id="main-content">
 
     <!-- LEFT PANEL: ASCII Character Setup -->
@@ -158,7 +153,7 @@
       <circle cx="500" cy="52" r="6" fill="#F59E0B"/>
       <circle cx="520" cy="52" r="6" fill="#10B981"/>
 
-      <!-- Non-functional Glowing Pulsing REC Button (Moved to top right of right frame) -->
+      <!-- REC Button -->
       <g transform="translate(1080, 52)" opacity="0">
         <animate attributeName="opacity" to="1" begin="0.3s" dur="0.3s" fill="freeze"/>
         <circle cx="0" cy="0" r="4.5" fill="#EF4444" class="rec-blink" filter="url(#redGlow)"/>
@@ -179,7 +174,6 @@
           <g opacity="0"><animate attributeName="opacity" to="1" begin="0.5s" dur="0.2s" fill="freeze"/>
             <text x="0" y="0" class="text-yellow-profile">. Name</text>
             <text x="140" y="0" class="text-muted">. . . . . . . . . . . . . .</text>
-            <!-- Correct brand darker blue shade for profile values -->
             <text x="330" y="0" class="text-blue-dark">Sahil Sakure</text>
           </g>
 
@@ -187,7 +181,7 @@
           <g opacity="0"><animate attributeName="opacity" to="1" begin="0.58s" dur="0.2s" fill="freeze"/>
             <text x="0" y="21" class="text-yellow-profile">. Role</text>
             <text x="140" y="21" class="text-muted">. . . . . . . . . . . . . .</text>
-            <text x="330" y="21" class="text-blue-dark">Full-Stack &amp; AI Engineer</text>
+            <text x="330" y="21" class="text-blue-dark">Full-Stack and AI Engineer</text>
           </g>
 
           <!-- Row 3: Origin -->
@@ -267,17 +261,17 @@
           <text x="0" y="0" class="text-green" font-weight="bold">- Contact</text>
           <text x="90" y="0" class="text-muted">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
 
-          <!-- Mail key (Yellow title, blue-dark value) -->
+          <!-- Mail -->
           <text x="20" y="21" class="text-yellow-profile">. Grid Mail</text>
           <text x="140" y="21" class="text-muted">. . . . . . . . . . . . . .</text>
           <text x="330" y="21" class="text-blue-dark">sahilsakure994@gmail.com</text>
 
-          <!-- Brand key (Yellow title, blue-dark value) -->
+          <!-- Brand -->
           <text x="20" y="42" class="text-yellow-profile">. Grid Brand</text>
           <text x="140" y="42" class="text-muted">. . . . . . . . . . . . . .</text>
           <text x="330" y="42" class="text-blue-dark">SAVREX Streetwear Apparel</text>
 
-          <!-- Github key (Yellow title, blue-dark value) -->
+          <!-- Github -->
           <text x="20" y="63" class="text-yellow-profile">. Grid Github</text>
           <text x="140" y="63" class="text-muted">. . . . . . . . . . . . . .</text>
           <text x="330" y="63" class="text-blue-dark">SahilSakure</text>
@@ -289,7 +283,6 @@
           <text x="0" y="0" class="text-green" font-weight="bold">- Live Stats</text>
           <text x="110" y="0" class="text-muted">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
 
-          <!-- Blinking rectangular block cursor -->
           <rect x="0" y="16" width="12" height="16" fill="#22D3EE" class="cursor"/>
           <text x="22" y="29" class="text-white" font-weight="bold">See live GitHub stats badges below in README ;</text>
         </g>
@@ -299,15 +292,15 @@
 
   </g>
 
-  <!-- CRT Scanline Grid Overlay (Entire Canvas) -->
+  <!-- CRT Scanline Grid Overlay -->
   <rect width="1180" height="610" rx="24" fill="url(#scanlines)" pointer-events="none"/>
 
-  <!-- Scanning Laser Light Glow Wave (Full Banner Width) -->
+  <!-- Scanning Laser Light Glow Wave -->
   <rect width="1180" height="70" fill="url(#laserWave)" pointer-events="none">
     <animate attributeName="y" values="0;540;0" dur="4s" repeatCount="indefinite" ease="sine-in-out"/>
   </rect>
 
-  <!-- Intense Horizontal Scanning Line across full banner -->
+  <!-- Intense Horizontal Scanning Line -->
   <line x1="0" y1="0" x2="1180" y2="0" stroke="#22D3EE" stroke-width="2.5" opacity="0.85" filter="url(#laserGlow)" pointer-events="none">
     <animate attributeName="y1" values="0;540;0" dur="4s" repeatCount="indefinite" ease="sine-in-out"/>
     <animate attributeName="y2" values="0;540;0" dur="4s" repeatCount="indefinite" ease="sine-in-out"/>
