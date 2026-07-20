@@ -1,0 +1,318 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="100%" height="100%">
+  <defs>
+    <!-- Pitch Black Background -->
+    <linearGradient id="darkBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0B0F19" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Animated ASCII Cyan-Purple Gradient (Left Panel Art Only) -->
+    <linearGradient id="asciiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE">
+        <animate attributeName="stop-color" values="#22D3EE; #3B82F6; #A855F7; #22D3EE" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#A855F7">
+        <animate attributeName="stop-color" values="#A855F7; #22D3EE; #3B82F6; #A855F7" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#10B981">
+        <animate attributeName="stop-color" values="#10B981; #A855F7; #22D3EE; #10B981" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <!-- Scanning Laser Bright Wave Gradient -->
+    <linearGradient id="laserWave" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22D3EE" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- CRT Scanline Grid Pattern across whole canvas -->
+    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="100" y2="0" stroke="#000000" stroke-width="1.2" opacity="0.35"/>
+    </pattern>
+
+    <!-- Filters & Effects -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="laserGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="redGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <clipPath id="fullClip">
+      <rect x="0" y="0" width="1180" height="610" rx="24"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .text-mono { font-family: "Courier New", Courier, monospace, "Consolas"; }
+    /* Primary brand blue - slightly darker shade than basic cyan/blue used previously */
+    .text-blue-dark { fill: #3B82F6; font-weight: bold; }
+    /* Consistent yellow used for all profile keys/titles */
+    .text-yellow-profile { fill: #FBBF24; }
+    
+    /* Original system text colors */
+    .text-cyan { fill: #22D3EE; }
+    .text-purple { fill: #A855F7; }
+    .text-green { fill: #10B981; }
+    .text-white { fill: #F8FAFC; font-weight: bold; }
+    .text-muted { fill: #64748B; }
+    .text-red { fill: #EF4444; font-weight: bold; }
+    .ascii-funny { font-family: "Courier New", Courier, monospace; font-weight: bold; font-size: 11.5px; fill: url(#asciiGrad); letter-spacing: 1.2px; white-space: pre; }
+    
+    /* Cursor & REC Blink Animation */
+    .cursor { animation: blink 0.8s infinite; }
+    .rec-blink { animation: recPulse 1.2s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes recPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
+  </style>
+
+  <!-- Pitch Black Canvas Background -->
+  <rect width="1180" height="610" rx="24" fill="url(#darkBg)"/>
+
+  <!-- Ambient Background Orbs -->
+  <circle cx="200" cy="150" r="180" fill="#7C3AED" opacity="0.12" filter="url(#glow)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,20; 0,0" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="950" cy="350" r="220" fill="#22D3EE" opacity="0.08" filter="url(#glow)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -40,-30; 0,0" dur="15s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="500" cy="500" r="140" fill="#10B981" opacity="0.06" filter="url(#glow)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 25,-25; 0,0" dur="10s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Micro Floating Particles -->
+  <g opacity="0.4">
+    <circle cx="100" cy="120" r="1.5" fill="#22D3EE"><animate attributeName="cy" values="120;100;120" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="450" cy="80" r="2" fill="#7C3AED"><animate attributeName="cy" values="80;60;80" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;1;0.3" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="1100" cy="200" r="1.5" fill="#10B981"><animate attributeName="cy" values="200;180;200" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="700" cy="550" r="2" fill="#22D3EE"><animate attributeName="cy" values="550;530;550" dur="7s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- MAIN CONTENT GROUP (Sequentially Revealed) -->
+  <g id="main-content">
+
+    <!-- LEFT PANEL: ASCII Character Setup -->
+    <g id="left-panel">
+      <rect x="30" y="30" width="410" height="550" rx="20" fill="url(#panelGrad)" stroke="url(#borderGrad)" stroke-width="1"/>
+      
+      <g transform="translate(95, 100)">
+        <animateTransform attributeName="transform" type="translate" values="95,100; 95,93; 95,100" dur="6s" repeatCount="indefinite" ease="sine"/>
+        
+        <text y="0" class="ascii-funny" opacity="0">       &lt;/&gt; BUG HUNTER &lt;/&gt;<animate attributeName="opacity" to="1" begin="0.2s" dur="0.2s" fill="freeze"/></text>
+        <text y="19" class="ascii-funny" opacity="0">         .------------.<animate attributeName="opacity" to="1" begin="0.3s" dur="0.2s" fill="freeze"/></text>
+        <text y="38" class="ascii-funny" opacity="0">        /   ~ HAIR ~   \<animate attributeName="opacity" to="1" begin="0.4s" dur="0.2s" fill="freeze"/></text>
+        <text y="57" class="ascii-funny" opacity="0">       |  ( ⌐■ _ ■ )   |<animate attributeName="opacity" to="1" begin="0.5s" dur="0.2s" fill="freeze"/></text>
+        <text y="76" class="ascii-funny" opacity="0">        \    `---'    /<animate attributeName="opacity" to="1" begin="0.6s" dur="0.2s" fill="freeze"/></text>
+        <text y="95" class="ascii-funny" opacity="0">         '---.  .---'<animate attributeName="opacity" to="1" begin="0.7s" dur="0.2s" fill="freeze"/></text>
+        <text y="114" class="ascii-funny" opacity="0">        /|   |  |   |\<animate attributeName="opacity" to="1" begin="0.8s" dur="0.2s" fill="freeze"/></text>
+        <text y="133" class="ascii-funny" opacity="0">       / |   |  |   | \<animate attributeName="opacity" to="1" begin="0.9s" dur="0.2s" fill="freeze"/></text>
+        <text y="152" class="ascii-funny" opacity="0">      (  |  ENGINEER|  )<animate attributeName="opacity" to="1" begin="1.0s" dur="0.2s" fill="freeze"/></text>
+        <text y="171" class="ascii-funny" opacity="0">       \ |__________| /  (  )<animate attributeName="opacity" to="1" begin="1.1s" dur="0.2s" fill="freeze"/></text>
+        <text y="190" class="ascii-funny" opacity="0">     .-'-'----------'-'-. ) (<animate attributeName="opacity" to="1" begin="1.2s" dur="0.2s" fill="freeze"/></text>
+        <text y="209" class="ascii-funny" opacity="0">    / .----------------. \__c_<animate attributeName="opacity" to="1" begin="1.3s" dur="0.2s" fill="freeze"/></text>
+        <text y="228" class="ascii-funny" opacity="0">   |  |  printf("hi"); |  |[|]<animate attributeName="opacity" to="1" begin="1.4s" dur="0.2s" fill="freeze"/></text>
+        <text y="247" class="ascii-funny" opacity="0">   |  |  sahil.code(); |  |`~'<animate attributeName="opacity" to="1" begin="1.5s" dur="0.2s" fill="freeze"/></text>
+        <text y="266" class="ascii-funny" opacity="0">   |  '----------------'  |<animate attributeName="opacity" to="1" begin="1.6s" dur="0.2s" fill="freeze"/></text>
+        <text y="285" class="ascii-funny" opacity="0">  /===/================\===\<animate attributeName="opacity" to="1" begin="1.7s" dur="0.2s" fill="freeze"/></text>
+        <text y="304" class="ascii-funny" opacity="0"> [___/   [TYPING...]    \___]<animate attributeName="opacity" to="1" begin="1.8s" dur="0.2s" fill="freeze"/></text>
+        <text y="323" class="ascii-funny" opacity="0"> |__________________________|<animate attributeName="opacity" to="1" begin="1.9s" dur="0.2s" fill="freeze"/></text>
+      </g>
+
+      <!-- Left Status Indicator -->
+      <g opacity="0">
+        <animate attributeName="opacity" to="1" begin="2.0s" dur="0.3s" fill="freeze"/>
+        <rect x="50" y="520" width="370" height="40" rx="10" fill="#030712" opacity="0.7"/>
+        <circle cx="70" cy="540" r="4" fill="#10B981"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
+        <text x="85" y="544" class="text-mono text-muted" font-size="11">STATUS: TURBO CODING</text>
+        <text x="360" y="544" class="text-mono text-cyan" font-size="11" font-weight="bold">v2.4.0</text>
+      </g>
+    </g>
+
+    <!-- RIGHT PANEL: Main System Terminal Window -->
+    <g id="right-panel">
+      <rect x="450" y="30" width="700" height="550" rx="20" fill="url(#panelGrad)" stroke="url(#borderGrad)" stroke-width="1"/>
+
+      <!-- Terminal Header Bar with Window Controls -->
+      <path d="M450 50 Q450 30 470 30 L1130 30 Q1150 30 1150 50 L1150 75 L450 75 Z" fill="#0B0F19" opacity="0.95"/>
+      <circle cx="480" cy="52" r="6" fill="#EF4444"/>
+      <circle cx="500" cy="52" r="6" fill="#F59E0B"/>
+      <circle cx="520" cy="52" r="6" fill="#10B981"/>
+
+      <!-- Non-functional Glowing Pulsing REC Button (Moved to top right of right frame) -->
+      <g transform="translate(1080, 52)" opacity="0">
+        <animate attributeName="opacity" to="1" begin="0.3s" dur="0.3s" fill="freeze"/>
+        <circle cx="0" cy="0" r="4.5" fill="#EF4444" class="rec-blink" filter="url(#redGlow)"/>
+        <text x="9" y="3.5" class="text-mono text-red" font-size="10" letter-spacing="1">REC</text>
+      </g>
+
+      <!-- Terminal Body Content -->
+      <g transform="translate(480, 95)" class="text-mono">
+        
+        <!-- System Title Header -->
+        <text x="0" y="15" class="text-purple" font-size="14" font-weight="bold" opacity="0">SYSTEM_INFO<animate attributeName="opacity" to="1" begin="0.3s" dur="0.2s" fill="freeze"/></text>
+        <text x="0" y="38" class="text-cyan" font-size="17" font-weight="bold" opacity="0">sahil@devos<animate attributeName="opacity" to="1" begin="0.4s" dur="0.2s" fill="freeze"/></text>
+
+        <!-- General Info Items -->
+        <g transform="translate(0, 60)" font-size="13">
+          
+          <!-- Row 1: Name -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="0.5s" dur="0.2s" fill="freeze"/>
+            <text x="0" y="0" class="text-yellow-profile">. Name</text>
+            <text x="140" y="0" class="text-muted">. . . . . . . . . . . . . .</text>
+            <!-- Correct brand darker blue shade for profile values -->
+            <text x="330" y="0" class="text-blue-dark">Sahil Sakure</text>
+          </g>
+
+          <!-- Row 2: Role -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="0.58s" dur="0.2s" fill="freeze"/>
+            <text x="0" y="21" class="text-yellow-profile">. Role</text>
+            <text x="140" y="21" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="21" class="text-blue-dark">Full-Stack &amp; AI Engineer</text>
+          </g>
+
+          <!-- Row 3: Origin -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="0.66s" dur="0.2s" fill="freeze"/>
+            <text x="0" y="42" class="text-yellow-profile">. Origin</text>
+            <text x="140" y="42" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="42" class="text-blue-dark">Kharghar, Navi Mumbai, India</text>
+          </g>
+
+          <!-- Row 4: Education -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="0.74s" dur="0.2s" fill="freeze"/>
+            <text x="0" y="63" class="text-yellow-profile">. Education</text>
+            <text x="140" y="63" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="63" class="text-blue-dark">Information Technology Student</text>
+          </g>
+
+          <!-- Row 5: Status -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="0.82s" dur="0.2s" fill="freeze"/>
+            <text x="0" y="84" class="text-yellow-profile">. Status</text>
+            <text x="140" y="84" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="84" class="text-blue-dark">Building . Learning . Shipping</text>
+          </g>
+
+          <!-- Row 6: ToolChain -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="0.90s" dur="0.2s" fill="freeze"/>
+            <text x="0" y="105" class="text-yellow-profile">. ToolChain</text>
+            <text x="140" y="105" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="105" class="text-blue-dark">VS Code, Git, Docker, Postman</text>
+          </g>
+        </g>
+
+        <!-- Section: Tech Stack Header -->
+        <g transform="translate(0, 185)" font-size="13" opacity="0">
+          <animate attributeName="opacity" to="1" begin="0.98s" dur="0.2s" fill="freeze"/>
+          <text x="0" y="0" class="text-green" font-weight="bold">- Tech Stack</text>
+          <text x="110" y="0" class="text-muted">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+
+          <!-- Core Lang -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="1.06s" dur="0.2s" fill="freeze"/>
+            <text x="20" y="21" class="text-yellow-profile">. Core Lang</text>
+            <text x="140" y="21" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="21" class="text-blue-dark">Python, TypeScript, C, C++</text>
+          </g>
+
+          <!-- Core Frontend -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="1.14s" dur="0.2s" fill="freeze"/>
+            <text x="20" y="42" class="text-yellow-profile">. Core Frontend</text>
+            <text x="140" y="42" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="42" class="text-blue-dark">React, HTML, CSS, JavaScript</text>
+          </g>
+
+          <!-- Core Backend -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="1.22s" dur="0.2s" fill="freeze"/>
+            <text x="20" y="63" class="text-yellow-profile">. Core Backend</text>
+            <text x="140" y="63" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="63" class="text-blue-dark">FastAPI, Node.js, Express.js</text>
+          </g>
+
+          <!-- Core Database -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="1.30s" dur="0.2s" fill="freeze"/>
+            <text x="20" y="84" class="text-yellow-profile">. Core Database</text>
+            <text x="140" y="84" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="84" class="text-blue-dark">PostgreSQL, MongoDB, MySQL</text>
+          </g>
+
+          <!-- Core Infra -->
+          <g opacity="0"><animate attributeName="opacity" to="1" begin="1.38s" dur="0.2s" fill="freeze"/>
+            <text x="20" y="105" class="text-yellow-profile">. Core Infra</text>
+            <text x="140" y="105" class="text-muted">. . . . . . . . . . . . . .</text>
+            <text x="330" y="105" class="text-blue-dark">Docker, Git, Microservices, FFmpeg</text>
+          </g>
+        </g>
+
+        <!-- Section: Contact -->
+        <g transform="translate(0, 315)" font-size="13" opacity="0">
+          <animate attributeName="opacity" to="1" begin="1.46s" dur="0.2s" fill="freeze"/>
+          <text x="0" y="0" class="text-green" font-weight="bold">- Contact</text>
+          <text x="90" y="0" class="text-muted">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+
+          <!-- Mail key (Yellow title, blue-dark value) -->
+          <text x="20" y="21" class="text-yellow-profile">. Grid Mail</text>
+          <text x="140" y="21" class="text-muted">. . . . . . . . . . . . . .</text>
+          <text x="330" y="21" class="text-blue-dark">sahilsakure994@gmail.com</text>
+
+          <!-- Brand key (Yellow title, blue-dark value) -->
+          <text x="20" y="42" class="text-yellow-profile">. Grid Brand</text>
+          <text x="140" y="42" class="text-muted">. . . . . . . . . . . . . .</text>
+          <text x="330" y="42" class="text-blue-dark">SAVREX Streetwear Apparel</text>
+
+          <!-- Github key (Yellow title, blue-dark value) -->
+          <text x="20" y="63" class="text-yellow-profile">. Grid Github</text>
+          <text x="140" y="63" class="text-muted">. . . . . . . . . . . . . .</text>
+          <text x="330" y="63" class="text-blue-dark">SahilSakure</text>
+        </g>
+
+        <!-- Section: Live Stats -->
+        <g transform="translate(0, 410)" font-size="13" opacity="0">
+          <animate attributeName="opacity" to="1" begin="1.54s" dur="0.2s" fill="freeze"/>
+          <text x="0" y="0" class="text-green" font-weight="bold">- Live Stats</text>
+          <text x="110" y="0" class="text-muted">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+
+          <!-- Blinking rectangular block cursor -->
+          <rect x="0" y="16" width="12" height="16" fill="#22D3EE" class="cursor"/>
+          <text x="22" y="29" class="text-white" font-weight="bold">See live GitHub stats badges below in README ;</text>
+        </g>
+
+      </g>
+    </g>
+
+  </g>
+
+  <!-- CRT Scanline Grid Overlay (Entire Canvas) -->
+  <rect width="1180" height="610" rx="24" fill="url(#scanlines)" pointer-events="none"/>
+
+  <!-- Scanning Laser Light Glow Wave (Full Banner Width) -->
+  <rect width="1180" height="70" fill="url(#laserWave)" pointer-events="none">
+    <animate attributeName="y" values="0;540;0" dur="4s" repeatCount="indefinite" ease="sine-in-out"/>
+  </rect>
+
+  <!-- Intense Horizontal Scanning Line across full banner -->
+  <line x1="0" y1="0" x2="1180" y2="0" stroke="#22D3EE" stroke-width="2.5" opacity="0.85" filter="url(#laserGlow)" pointer-events="none">
+    <animate attributeName="y1" values="0;540;0" dur="4s" repeatCount="indefinite" ease="sine-in-out"/>
+    <animate attributeName="y2" values="0;540;0" dur="4s" repeatCount="indefinite" ease="sine-in-out"/>
+  </line>
+
+  <!-- Canvas Outer Border -->
+  <rect width="1178" height="608" x="1" y="1" rx="23" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" pointer-events="none"/>
+</svg>
